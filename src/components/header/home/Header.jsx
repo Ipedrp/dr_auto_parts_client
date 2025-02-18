@@ -1,10 +1,10 @@
-import home from "../../assets/image/header/home.png";
+import img from "../../../assets/image/header/home.png";
 
 const Header = () => {
     return (
         <section
             className=" flex justify-center items-center relative w-full h-[85vh] bg-cover bg-top bg-no-repeat z-10"
-            style={{ backgroundImage: `url(${home})` }}
+            style={{ backgroundImage: `url(${img})` }}
         >
             {/* Overlay para escurecer a imagem */}
             <div className="absolute inset-0 bg-black opacity-65"></div>

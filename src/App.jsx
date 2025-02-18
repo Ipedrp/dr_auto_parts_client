@@ -1,34 +1,20 @@
-
-import './App.css'
-import Header from './components/header/Header'
-import Navbar from './components/navbar/Navbar'
-import NavbarMobile from './components/navbar/NavbarMobile'
-import Partners from './components/partners/Partners'
-import Company from './components/company/Company'
-import Timeline from './components/timeline/Timeline'
-import Parallax from './components/parallax/Parallax'
-import FeatureProduct from './components/featureProduct/FeatureProduct'
-import Footer from './components/footer/Footer'
-import { useMediaQuery } from 'react-responsive'
-
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+import Layout from "./layout/Layout";
+import Home from "./screens/home/Home";
+import About from "./screens/about/About";
 
 function App() {
-  const isMobile = useMediaQuery({
-    query: '(max-width: 930px)'
-  })
-
   return (
     <>
-      {
-        isMobile ? <NavbarMobile /> : <Navbar />
-      }
-      <Header />
-      <Company/>
-      <Timeline/>
-      <Parallax/>
-      <FeatureProduct/>
-      <Partners />
-      <Footer/>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="empresa" element={<About />} />
+            {/* <Route path="contato" element={<Contato />} />  */}
+          </Route>
+        </Routes>
+      </Router>
     </>
   )
 }

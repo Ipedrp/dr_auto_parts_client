@@ -27,7 +27,7 @@ const Timeline = () => {
         <div className="flex w-vw justify-center items-center  m-5 sm:m-5 md:m-13 lg:m-10 ">
            {/* Imagem apenas para desktop */}
            <div className="w-full lg:w-1/2 flex justify-center hidden lg:flex">
-                <img className="w-[95%]" src={home} alt="" />
+                <img className="w-[95%] hover:scale-105 transition-all duration-300" src={home} alt="" />
             </div>
             <div className="flex-1">
                 <ol className="relative border-s border-sky-900 p-5 m-5 sm:m-5 md:m-5 lg:m-10">

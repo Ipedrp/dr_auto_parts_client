@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -28,10 +29,10 @@ const Navbar = () => {
                     <ul className="flex items-center justify-center gap-6 px-6 py-3 bg-white rounded-md ">
                         <li className="border-b-2 border-transparent text-black 
                            transition-all duration-300 ease-in-out 
-                           hover:border-b-2  hover:border-sky-900 hover:cursor-pointer">Home</li>
+                           hover:border-b-2  hover:border-sky-900 hover:cursor-pointer"><Link to="/">Home</Link></li>
                         <li className="border-b-2 border-transparent text-black 
                            transition-all duration-300 ease-in-out 
-                           hover:border-b-2  hover:border-sky-900 hover:cursor-pointer">Empresa</li>
+                           hover:border-b-2  hover:border-sky-900 hover:cursor-pointer"><Link to="/empresa">Empresa</Link></li>
                         <li className="border-b-2 border-transparent text-black 
                            transition-all duration-300 ease-in-out 
                            hover:border-b-2  hover:border-sky-900 hover:cursor-pointer">Produtos</li>
