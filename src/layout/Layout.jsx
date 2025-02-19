@@ -1,24 +1,24 @@
-import Footer from "../components/footer/Footer";
-import { Outlet } from "react-router";
-import { useMediaQuery } from 'react-responsive'
+import { Outlet, useLocation } from "react-router";
+import { useMediaQuery } from "react-responsive";
 import Navbar from "../components/navbar/Navbar";
-import NavbarMobile from "../components/navbar/NavbarMobile"
+import NavbarMobile from "../components/navbar/NavbarMobile";
+import Footer from "../components/footer/Footer";
 
 const Layout = () => {
+    const isMobile = useMediaQuery({ query: "(max-width: 930px)" });
+    const location = useLocation(); 
 
-    const isMobile = useMediaQuery({
-        query: '(max-width: 930px)'
-    })
+    const isLoginPage = location.pathname === "/login";
 
     return (
         <>
-            {
-                isMobile ? <NavbarMobile /> : <Navbar />
-            }
+            {!isLoginPage && (isMobile ? <NavbarMobile /> : <Navbar />)}
+
             <main>
-                <Outlet /> {/* Renderiza a página ativa */}
+                <Outlet /> 
             </main>
-            <Footer />
+
+            {!isLoginPage && <Footer />}
         </>
     );
 };
